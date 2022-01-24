@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
+import android.widget.Toast
 import java.lang.Exception
 
 class SettingActivity : AppCompatActivity() {
@@ -63,15 +64,25 @@ class SettingActivity : AppCompatActivity() {
         })
         buttonApply!!.setOnClickListener(View.OnClickListener {
 
+            val fontsize : String = editTextFontSize!!.text.toString()
             try {
-                Log.d("aaa", "bindview: " + editTextFontSize!!.text.toString())
-                var fontsize = editTextFontSize!!.text.toString()
-                var fontcolor = spinnerColor!!.selectedItem.toString()
-                sharedHelper!!.saveColorAndSize(fontcolor,fontsize)
-                Log.d("aaa", "bindview: fontsize = " + fontsize)
-                Log.d("aaa", "bindview: font color = " + spinnerColor!!.selectedItem.toString())
-                finish()
+                if(fontsize.trim().length>0) {
+
+                        Log.d("aaa", "bindview: " + editTextFontSize!!.text.toString())
+                        var fontsize = editTextFontSize!!.text.toString()
+                        var fontcolor = spinnerColor!!.selectedItem.toString()
+                        sharedHelper!!.saveColorAndSize(fontcolor, fontsize)
+                        Log.d("aaa", "bindview: fontsize = " + fontsize)
+                        Log.d("aaa", "bindview: font color = " + spinnerColor!!.selectedItem.toString())
+                        finish()
+
+                }else {
+                    Toast.makeText(applicationContext, "Please enter font size! ", Toast.LENGTH_SHORT).show()
+
+
+                }
             } catch (e: Exception) {
+                e.printStackTrace()
 
             }
 

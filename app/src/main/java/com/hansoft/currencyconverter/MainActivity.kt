@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     var textViewCurrency : TextView? = null
     var textViewAmount : TextView? = null
     var textViewRes : TextView? = null
-    var editTextNumber : EditText? = null
+    var editTextAmount : EditText? = null
     var buttonConvert : Button? = null
     private var fontcolor : String? = null
     private var fontsize : String? = null
@@ -118,13 +118,14 @@ class MainActivity : AppCompatActivity() {
             textViewRes!!.textSize = fontsize!!.toFloat()
             textViewResult!!.textSize = fontsize!!.toFloat()
             buttonConvert!!.textSize = fontsize!!.toFloat()
-            editTextNumber!!.textSize = fontsize!!.toFloat()
+            editTextAmount!!.textSize = fontsize!!.toFloat()
+            
             if (fontcolor == "Black") {
                 textViewCurrency!!.setTextColor(Color.BLACK)
                 textViewAmount!!.setTextColor(Color.BLACK)
                 textViewRes!!.setTextColor(Color.BLACK)
                 textViewResult!!.setTextColor(Color.BLACK)
-                editTextNumber!!.setTextColor(Color.BLACK)
+                editTextAmount!!.setTextColor(Color.BLACK)
                 buttonConvert!!.setTextColor(Color.BLACK)
 
             }
@@ -133,7 +134,7 @@ class MainActivity : AppCompatActivity() {
                 textViewAmount!!.setTextColor(Color.WHITE)
                 textViewRes!!.setTextColor(Color.WHITE)
                 textViewResult!!.setTextColor(Color.WHITE)
-                editTextNumber!!.setTextColor(Color.WHITE)
+                editTextAmount!!.setTextColor(Color.WHITE)
                 buttonConvert!!.setTextColor(Color.WHITE)
 
             }
@@ -142,7 +143,7 @@ class MainActivity : AppCompatActivity() {
                 textViewAmount!!.setTextColor(Color.RED)
                 textViewRes!!.setTextColor(Color.RED)
                 textViewResult!!.setTextColor(Color.RED)
-                editTextNumber!!.setTextColor(Color.RED)
+                editTextAmount!!.setTextColor(Color.RED)
                 buttonConvert!!.setTextColor(Color.RED)
 
             }
@@ -151,7 +152,7 @@ class MainActivity : AppCompatActivity() {
                 textViewAmount!!.setTextColor(Color.BLUE)
                 textViewRes!!.setTextColor(Color.BLUE)
                 textViewResult!!.setTextColor(Color.BLUE)
-                editTextNumber!!.setTextColor(Color.BLUE)
+                editTextAmount!!.setTextColor(Color.BLUE)
                 buttonConvert!!.setTextColor(Color.BLUE)
 
             }
@@ -160,7 +161,7 @@ class MainActivity : AppCompatActivity() {
                 textViewAmount!!.setTextColor(Color.YELLOW)
                 textViewRes!!.setTextColor(Color.YELLOW)
                 textViewResult!!.setTextColor(Color.YELLOW)
-                editTextNumber!!.setTextColor(Color.YELLOW)
+                editTextAmount!!.setTextColor(Color.YELLOW)
                 buttonConvert!!.setTextColor(Color.YELLOW)
 
             }
@@ -169,7 +170,7 @@ class MainActivity : AppCompatActivity() {
                 textViewAmount!!.setTextColor(Color.GREEN)
                 textViewRes!!.setTextColor(Color.GREEN)
                 textViewResult!!.setTextColor(Color.GREEN)
-                editTextNumber!!.setTextColor(Color.GREEN)
+                editTextAmount!!.setTextColor(Color.GREEN)
                 buttonConvert!!.setTextColor(Color.GREEN)
 
             }
@@ -246,7 +247,7 @@ class MainActivity : AppCompatActivity() {
         textViewCurrency = findViewById(R.id.textViewCurrency)
         textViewAmount = findViewById(R.id.textViewAmount)
         textViewRes = findViewById(R.id.textViewRes)
-        editTextNumber = findViewById(R.id.editTextNumber)
+        editTextAmount = findViewById(R.id.editTextAmount)
         buttonConvert = findViewById(R.id.buttonConvert)
         textViewResult = findViewById(R.id.textViewResult)
         myFloatingActionButton = findViewById(R.id.floatingActionButton)
@@ -256,9 +257,9 @@ class MainActivity : AppCompatActivity() {
 
         })
         buttonConvert!!.setOnClickListener {
-            if (!editTextNumber!!.text.toString().isEmpty()) {
+            if (!editTextAmount!!.text.toString().isEmpty()) {
                 val toCurr = spinnerCurrency!!.selectedItem.toString()
-                val euroVlaue = java.lang.Double.valueOf(editTextNumber!!.text.toString())
+                val euroVlaue = java.lang.Double.valueOf(editTextAmount!!.text.toString())
                 val url = "https://www.westpac.com.au/bin/getJsonRates.wbc.fx.json"
                 Toast.makeText(this@MainActivity, "Please Wait..", Toast.LENGTH_SHORT).show()
                 try {

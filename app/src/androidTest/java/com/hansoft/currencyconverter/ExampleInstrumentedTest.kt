@@ -43,8 +43,8 @@ class ExampleInstrumentedTest {
     @Throws(InterruptedException::class)
     fun testInputAmount() {
         Thread.sleep(2000)
-        onView(withId(R.id.editTextNumber)).perform(ViewActions.clearText())
-        onView(withId(R.id.editTextNumber))
+        onView(withId(R.id.editTextAmount)).perform(ViewActions.clearText())
+        onView(withId(R.id.editTextAmount))
             .perform(ViewActions.typeText("30"), ViewActions.closeSoftKeyboard())
         Thread.sleep(2000)
     }
@@ -67,8 +67,8 @@ class ExampleInstrumentedTest {
     @Throws(InterruptedException::class)
     fun testConvertButtonWithUSD() {
         Thread.sleep(2000)
-        onView(withId(R.id.editTextNumber)).perform(ViewActions.clearText())
-        onView(withId(R.id.editTextNumber))
+        onView(withId(R.id.editTextAmount)).perform(ViewActions.clearText())
+        onView(withId(R.id.editTextAmount))
                 .perform(ViewActions.typeText("30"), ViewActions.closeSoftKeyboard())
         onView(withId(R.id.buttonConvert))
                 .perform(ViewActions.click())
@@ -85,8 +85,8 @@ class ExampleInstrumentedTest {
         onData(allOf(`is`(instanceOf(String::class.java)), `is`("CNH"))).perform(click())
         onView(withId(R.id.spinnerCurrency)).check(matches(withSpinnerText(containsString("CNH"))))
 
-        onView(withId(R.id.editTextNumber)).perform(ViewActions.clearText())
-        onView(withId(R.id.editTextNumber))
+        onView(withId(R.id.editTextAmount)).perform(ViewActions.clearText())
+        onView(withId(R.id.editTextAmount))
                 .perform(ViewActions.typeText("30"), ViewActions.closeSoftKeyboard())
 
         onView(withId(R.id.buttonConvert))

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">CurrencyConverter</string>
+    <string name="currency_exchange">currency exchange</string>
+    <string name="currency">Currency</string>
+    <string name="amount">Amount</string>
+    <string name="input">input</string>
+    <string name="convert">Convert</string>
+    <string name="result">Aus Dollar</string>
+    <string name="Font_Size">Font Size</string>
+    <string name="setting">Setting</string>
+    <string name="sp">sp</string>
+    <string name="Font_Color">Font Color</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string-array name="array_color">
+        <item>Black</item>
+        <item>White</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Green</item>
+    </string-array>
+</resources>

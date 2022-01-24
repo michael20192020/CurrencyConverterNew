@@ -1,0 +1,4 @@
+include ':t'
+include ':currencylib'
+include ':app'
+rootProject.name = "CurrencyConverter"
